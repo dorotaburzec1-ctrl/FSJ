@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Psałterz floriański — pierwsze nagrania · Fundacja Świętej Jadwigi</title>
+<meta name="description" content="Pierwsze nagrania Psałterza floriańskiego — najstarszego zabytku języka polskiego, w staropolskim brzmieniu. Program kulturalny Fundacji Świętej Jadwigi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --atrament:#14172A;--lazur:#23346B;--lazur-glab:#1A2750;--minia:#A8322A;--zloto:#9C7C33;
+  --kamien:#E9EAE5;--kamien-jasny:#F2F3EF;--szept:#5B6070;--linia:rgba(20,23,42,.16);
+  --display:"Cardo",Georgia,serif;--tekst:"IBM Plex Sans",system-ui,sans-serif;
+  --rubryka:"IBM Plex Mono",ui-monospace,monospace;--maks:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--kamien);color:var(--atrament);
+  font-family:var(--tekst);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.rama{width:min(100% - 44px,var(--maks));margin-inline:auto}
+.rubryka{font-family:var(--rubryka);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--minia);font-weight:500}
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.05}
+h1 em{font-style:italic;color:var(--lazur)}
+a{color:inherit}
+
+.gora{padding:26px 0 0}
+.gora__pas{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.znak{font-family:var(--display);font-size:1.12rem;letter-spacing:.02em;text-decoration:none}
+.znak i{font-style:italic;color:var(--zloto)}
+.wroc{font-family:var(--rubryka);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--szept);text-decoration:none}
+.wroc:hover{color:var(--minia)}
+
+.naglowek{padding:clamp(50px,8vw,96px) 0 clamp(30px,4vw,48px)}
+.naglowek h1{max-width:16ch;margin-top:22px}
+.naglowek__lead{max-width:56ch;margin-top:24px;font-size:1.12rem;color:#2C3145}
+
+.opowiesc{padding:0 0 clamp(46px,7vw,80px)}
+.opowiesc__uklad{display:grid;grid-template-columns:1.4fr .6fr;gap:clamp(28px,4vw,60px);align-items:start}
+.opowiesc__tekst p{margin:0 0 1.1em;font-size:16.5px;color:#2C3145;max-width:60ch}
+.opowiesc__tekst strong{font-weight:600}
+.opowiesc__nota{background:var(--kamien-jasny);border-top:2px solid var(--zloto);padding:26px 24px}
+.opowiesc__nota dl{margin:14px 0 0}
+.opowiesc__nota dt{font-family:var(--rubryka);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--szept);margin-top:14px}
+.opowiesc__nota dd{margin:2px 0 0;font-family:var(--display);font-size:1.1rem}
+.rubryka--cicha{color:var(--szept)}
+@media (max-width:820px){.opowiesc__uklad{grid-template-columns:1fr}}
+
+.odtwarzacz{padding:0 0 clamp(60px,9vw,110px)}
+.plyta{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,56px);align-items:start}
+@media (max-width:820px){.plyta{grid-template-columns:1fr}}
+
+/* panel bieżącego utworu */
+.teraz{position:sticky;top:24px;background:var(--lazur-glab);color:#E7E9F2;padding:clamp(28px,3.4vw,40px)}
+.teraz__eta{font-family:var(--rubryka);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8E9AC0}
+.teraz__tytul{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.1;color:#fff;margin:14px 0 6px}
+.teraz__incipit{font-family:var(--display);font-style:italic;font-size:1.15rem;color:#C3C9DD;margin:0 0 26px}
+.sterowanie{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.graj{width:56px;height:56px;flex:none;border-radius:50%;border:1px solid rgba(200,167,90,.5);
+  background:var(--zloto);color:var(--lazur-glab);cursor:pointer;display:grid;place-items:center;transition:transform .15s,background .2s}
+.graj:hover{transform:scale(1.05)}
+.graj svg{width:20px;height:20px;display:block}
+.przew{display:flex;gap:10px}
+.przew button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+  background:transparent;color:#E7E9F2;cursor:pointer;display:grid;place-items:center;transition:border-color .2s}
+.przew button:hover{border-color:var(--zloto)}
+.przew svg{width:15px;height:15px}
+.pasek{display:flex;align-items:center;gap:12px;font-family:var(--rubryka);font-size:12px;color:#8E9AC0}
+.tor{flex:1;height:4px;background:rgba(255,255,255,.18);position:relative;cursor:pointer}
+.tor__wyp{position:absolute;inset:0 auto 0 0;width:0;background:var(--zloto)}
+
+/* lista */
+.lista{list-style:none;margin:0;padding:0;border-top:2px solid var(--atrament)}
+.utwor{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;
+  padding:16px 6px;border-bottom:1px solid var(--linia);cursor:pointer;transition:background .2s;position:relative}
+.utwor:hover{background:rgba(255,255,255,.5)}
+.utwor.gra{background:rgba(156,124,51,.12)}
+.utwor.gra .utwor__nr{color:var(--minia)}
+.utwor__nr{font-family:var(--rubryka);font-size:13px;color:var(--szept)}
+.utwor__tyt{font-family:var(--display);font-size:1.2rem;line-height:1.2}
+.utwor__tyt small{display:block;font-family:var(--tekst);font-style:italic;font-size:13.5px;color:var(--szept);margin-top:3px}
+.utwor__czas{font-family:var(--rubryka);font-size:12px;color:var(--szept)}
+
+.nota{margin-top:clamp(40px,6vw,64px);padding-top:26px;border-top:1px solid var(--linia);max-width:62ch}
+.nota p{font-size:15px;color:var(--szept)}
+
+footer{padding:34px 0 46px;font-size:13px;color:var(--szept);border-top:1px solid var(--linia);background:var(--kamien-jasny);margin-top:40px}
+.stopka{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--minia);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="gora">
+  <div class="rama gora__pas">
+    <a class="znak" href="/">Fundacja <i>Świętej Jadwigi</i></a>
+    <a class="wroc" href="/#programy">← Wróć do programów</a>
+  </div>
+</header>
+
+<main>
+  <section class="naglowek">
+    <div class="rama">
+      <p class="rubryka">Program kulturalny · Dziedzictwo języka</p>
+      <h1>Psałterz floriański — <em>pierwsze nagrania</em></h1>
+      <p class="naglowek__lead">Jeden z najstarszych zabytków języka polskiego, po raz pierwszy przywrócony głosowi. Nagraliśmy psalmy w ich staropolskim brzmieniu — próbę odtworzenia, jak mogła brzmieć polszczyzna sprzed sześciu wieków, czytana na głos.</p>
+    </div>
+  </section>
+
+  <section class="opowiesc">
+    <div class="rama opowiesc__uklad">
+      <div class="opowiesc__tekst">
+        <p>Jadwiga Andegaweńska przybyła do Polski z Węgier jako dziecko i została koronowana na króla. Z jej dworem łączy się powstanie <strong>Psałterza floriańskiego</strong> — rękopisu, w którym każdy werset zapisano w trzech językach: po łacinie, po polsku i po niemiecku. Łacina Kościoła, polszczyzna kraju, niemczyzna dworu — trzy światy w jednej księdze.</p>
+        <p>Herb Andegawenów na jednej z kart wskazuje, że psałterz przygotowywano dla dynastii królowej. Prace przerwała jej śmierć w 1399 roku, a księga przez wieki wędrowała aż do austriackiego opactwa Sankt Florian — stąd jej nazwa. Dziś rękopis przechowuje Biblioteka Narodowa w Warszawie jako jeden z najcenniejszych pomników polskiego średniowiecza.</p>
+        <p>Polski tekst psałterza to najstarszy zachowany przekład psalmów na nasz język. Te nagrania są próbą usłyszenia go tak, jak mógł brzmieć wtedy — nie jako modlitwa, lecz jako żywy zapis polszczyzny u jej początków.</p>
+      </div>
+      <aside class="opowiesc__nota">
+        <p class="rubryka rubryka--cicha">Zabytek</p>
+        <dl>
+          <dt>Powstanie</dt><dd>przełom XIV i XV wieku</dd>
+          <dt>Języki</dt><dd>łacina · polski · niemiecki</dd>
+          <dt>Związek</dt><dd>dwór królowej Jadwigi</dd>
+          <dt>Dziś</dt><dd>Biblioteka Narodowa, Warszawa</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="odtwarzacz">
+    <div class="rama plyta">
+
+      <div class="teraz">
+        <p class="teraz__eta" id="eta">Utwór 1 z 12</p>
+        <h2 class="teraz__tytul" id="tytul">Psalm 23</h2>
+        <p class="teraz__incipit" id="incipit">Pan jest moim pasterzem</p>
+
+        <div class="sterowanie">
+          <button class="graj" id="graj" aria-label="Odtwórz">
+            <svg id="ikonaGraj" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="przew">
+            <button id="poprz" aria-label="Poprzedni"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+            <button id="nast" aria-label="Następny"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+          </div>
+        </div>
+
+        <div class="pasek">
+          <span id="teraz-czas">0:00</span>
+          <div class="tor" id="tor"><div class="tor__wyp" id="torWyp"></div></div>
+          <span id="calk-czas">0:00</span>
+        </div>
+
+        <audio id="audio" preload="metadata"></audio>
+      </div>
+
+      <ol class="lista" id="lista"></ol>
+    </div>
+
+    <div class="rama">
+      <div class="nota">
+        <p>Podane współczesne pierwsze wersy służą jedynie rozpoznaniu psalmu — w nagraniach brzmią one w staropolszczyźnie Psałterza floriańskiego. Numeracja według rękopisu. Nagrania udostępniamy do prywatnego słuchania i użytku edukacyjnego; w sprawie wykorzystania publicznego lub koncertowego prosimy o kontakt: rexhedvigis@gmail.com.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="rama stopka">
+    <span>© 2026 Fundacja Świętej Jadwigi · ul. Koszykowa 1/9, 00-564 Warszawa</span>
+    <span>KRS 0001251150 · NIP 7011323791 · REGON 545301403</span>
+  </div>
+</footer>
+
+<script>
+var utwory = [
+  {plik:"audio/psalm-23.mp3",  nr:"Psalm 23",  incipit:"Pan jest moim pasterzem"},
+  {plik:"audio/psalm-121.mp3", nr:"Psalm 121", incipit:"Wznoszę swe oczy ku górom"},
+  {plik:"audio/psalm-27.mp3",  nr:"Psalm 27",  incipit:"Pan światłem i zbawieniem moim"},
+  {plik:"audio/psalm-46.mp3",  nr:"Psalm 46",  incipit:"Bóg jest dla nas ucieczką i siłą"},
+  {plik:"audio/psalm-90.mp3",  nr:"Psalm 90",  incipit:"Panie, Ty dla nas byłeś ucieczką"},
+  {plik:"audio/psalm-84.mp3",  nr:"Psalm 84",  incipit:"Jak miłe są przybytki Twoje"},
+  {plik:"audio/psalm-139.mp3", nr:"Psalm 139", incipit:"Przenikasz i znasz mnie, Panie"},
+  {plik:"audio/psalm-31.mp3",  nr:"Psalm 31",  incipit:"W Tobie, Panie, szukam schronienia"},
+  {plik:"audio/psalm-40.mp3",  nr:"Psalm 40",  incipit:"Złożyłem w Panu całą nadzieję"},
+  {plik:"audio/psalm-18.mp3",  nr:"Psalm 18",  incipit:"Miłuję Cię, Panie, Mocy moja"},
+  {plik:"audio/psalm-11.mp3",  nr:"Psalm 11",  incipit:"W Panu znajduję ucieczkę"},
+  {plik:"audio/psalm-4.mp3",   nr:"Psalm 4",   incipit:"Gdy Cię wzywam, odpowiedz mi"}
+];
+
+var audio = document.getElementById('audio');
+var lista = document.getElementById('lista');
+var elGraj = document.getElementById('graj');
+var elIkona = document.getElementById('ikonaGraj');
+var elTytul = document.getElementById('tytul');
+var elIncipit = document.getElementById('incipit');
+var elEta = document.getElementById('eta');
+var elTeraz = document.getElementById('teraz-czas');
+var elCalk = document.getElementById('calk-czas');
+var elTor = document.getElementById('tor');
+var elWyp = document.getElementById('torWyp');
+var biezacy = 0;
+
+var IKONA_GRAJ = '<path d="M8 5v14l11-7z"/>';
+var IKONA_PAUZA = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+
+function fmt(s){ if(isNaN(s)) return "0:00"; var m=Math.floor(s/60), r=Math.floor(s%60); return m+":"+(r<10?"0":"")+r; }
+
+utwory.forEach(function(u,i){
+  var li = document.createElement('li');
+  li.className = 'utwor';
+  li.innerHTML = '<span class="utwor__nr">'+String(i+1).padStart(2,'0')+'</span>'+
+    '<span class="utwor__tyt">'+u.nr+'<small>'+u.incipit+'</small></span>'+
+    '<span class="utwor__czas" data-i="'+i+'">—</span>';
+  li.addEventListener('click', function(){ wybierz(i, true); });
+  lista.appendChild(li);
+  // pobierz czas trwania
+  var probny = new Audio();
+  probny.preload = 'metadata';
+  probny.src = u.plik;
+  probny.addEventListener('loadedmetadata', function(){
+    var cel = document.querySelector('.utwor__czas[data-i="'+i+'"]');
+    if(cel) cel.textContent = fmt(probny.duration);
+  });
+});
+
+function odswiezListe(){
+  document.querySelectorAll('.utwor').forEach(function(el,i){
+    el.classList.toggle('gra', i===biezacy);
+  });
+}
+
+function wybierz(i, autoGraj){
+  biezacy = i;
+  var u = utwory[i];
+  audio.src = u.plik;
+  elTytul.textContent = u.nr;
+  elIncipit.textContent = u.incipit;
+  elEta.textContent = 'Utwór '+(i+1)+' z '+utwory.length;
+  odswiezListe();
+  if(autoGraj){ audio.play(); }
+}
+
+elGraj.addEventListener('click', function(){
+  if(audio.paused){ if(!audio.src) wybierz(0); audio.play(); }
+  else audio.pause();
+});
+document.getElementById('nast').addEventListener('click', function(){ wybierz((biezacy+1)%utwory.length, true); });
+document.getElementById('poprz').addEventListener('click', function(){ wybierz((biezacy-1+utwory.length)%utwory.length, true); });
+
+audio.addEventListener('play', function(){ elIkona.innerHTML = IKONA_PAUZA; elGraj.setAttribute('aria-label','Pauza'); });
+audio.addEventListener('pause', function(){ elIkona.innerHTML = IKONA_GRAJ; elGraj.setAttribute('aria-label','Odtwórz'); });
+audio.addEventListener('timeupdate', function(){
+  elTeraz.textContent = fmt(audio.currentTime);
+  elWyp.style.width = (audio.duration ? (audio.currentTime/audio.duration*100) : 0)+'%';
+});
+audio.addEventListener('loadedmetadata', function(){ elCalk.textContent = fmt(audio.duration); });
+audio.addEventListener('ended', function(){ if(biezacy < utwory.length-1) wybierz(biezacy+1, true); });
+elTor.addEventListener('click', function(e){
+  if(!audio.duration) return;
+  var r = elTor.getBoundingClientRect();
+  audio.currentTime = (e.clientX - r.left)/r.width * audio.duration;
+});
+
+wybierz(0, false);
+</script>
+</body>
+</html>
