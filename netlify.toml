@@ -1,0 +1,3 @@
+[build]
+  command = "python3 porzadki_strony.py"
+  publish = "_site"
