@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terapia i doradztwo rozwojowe — Agnieszka Mokrogulska, Pracownia Umysłu · Fundacja Świętej Jadwigi</title>
+<meta name="description" content="Wsparcie terapeutyczne oraz doradztwo edukacyjno-zawodowe dla młodzieży i dorosłych. Program prowadzi Agnieszka Mokrogulska — psycholożka, psychotraumatolożka, diagnostka i terapeutka (Pracownia Umysłu).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --atrament:#14172A;--lazur:#23346B;--lazur-glab:#1A2750;--minia:#A8322A;--zloto:#9C7C33;
+  --kamien:#E9EAE5;--kamien-jasny:#F2F3EF;--szept:#5B6070;--linia:rgba(20,23,42,.16);
+  --display:"Cardo",Georgia,serif;--tekst:"IBM Plex Sans",system-ui,sans-serif;
+  --rubryka:"IBM Plex Mono",ui-monospace,monospace;--maks:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--kamien);color:var(--atrament);
+  font-family:var(--tekst);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.rama{width:min(100% - 44px,var(--maks));margin-inline:auto}
+.rubryka{font-family:var(--rubryka);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--minia);font-weight:500}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.08}
+h1 em{font-style:italic;color:var(--lazur)}
+h2{font-size:clamp(1.6rem,3vw,2.1rem)}
+a{color:inherit}
+
+.gora{padding:26px 0 0}
+.gora__pas{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.znak{font-family:var(--display);font-size:1.12rem;letter-spacing:.02em;text-decoration:none}
+.znak i{font-style:italic;color:var(--zloto)}
+.wroc{font-family:var(--rubryka);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--szept);text-decoration:none}
+.wroc:hover{color:var(--minia)}
+
+.naglowek{padding:clamp(46px,8vw,88px) 0 clamp(26px,4vw,40px)}
+.naglowek h1{max-width:20ch;margin-top:20px}
+.naglowek__lead{max-width:60ch;margin-top:22px;font-size:1.1rem;color:#2C3145}
+
+.prowadzi{padding:0 0 clamp(40px,6vw,64px)}
+.prowadzi__uklad{display:grid;grid-template-columns:.62fr 1.38fr;gap:clamp(28px,4vw,56px);align-items:start;
+  background:var(--kamien-jasny);border-top:2px solid var(--zloto);padding:clamp(26px,3.4vw,40px)}
+.prowadzi__nota dt{font-family:var(--rubryka);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--szept);margin-top:14px}
+.prowadzi__nota dt:first-child{margin-top:0}
+.prowadzi__nota dd{margin:2px 0 0;font-family:var(--display);font-size:1.05rem}
+.prowadzi__tekst p{margin:0 0 1em;font-size:15.5px;color:#2C3145;max-width:64ch}
+@media (max-width:820px){.prowadzi__uklad{grid-template-columns:1fr}}
+
+.strumienie{padding:0 0 clamp(50px,7vw,90px)}
+.strumienie__naglowek{max-width:64ch;margin:0 0 clamp(26px,3.5vw,36px)}
+.strumienie__siatka{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linia);border-top:1px solid var(--linia)}
+@media (max-width:820px){.strumienie__siatka{grid-template-columns:1fr}}
+.strumien{background:var(--kamien);padding:clamp(26px,3.2vw,38px);scroll-margin-top:26px}
+.strumien h3{margin:14px 0 10px;font-size:1.5rem}
+.strumien>p{font-size:15.5px;color:#2C3145;max-width:56ch}
+.strumien ul{list-style:none;padding:0;margin:18px 0 0;font-size:14.5px}
+.strumien li{padding:8px 0 8px 18px;border-top:1px solid var(--linia);position:relative;color:var(--szept)}
+.strumien li::before{content:"—";position:absolute;left:0;color:var(--zloto)}
+.strumien__cta{display:inline-block;margin-top:22px;font-family:var(--rubryka);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;padding:12px 20px;border:1px solid var(--atrament);color:var(--atrament)}
+.strumien__cta:hover{background:var(--atrament);color:var(--kamien)}
+
+.dlaKogo{padding:0 0 clamp(50px,7vw,90px)}
+.dlaKogo__uklad{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px)}
+@media (max-width:820px){.dlaKogo__uklad{grid-template-columns:1fr}}
+.dlaKogo__blok h3{font-size:1.15rem;margin-bottom:10px}
+.dlaKogo__blok p{font-size:15px;color:#2C3145;max-width:56ch}
+
+.nota{margin-top:clamp(40px,6vw,64px);padding-top:26px;border-top:1px solid var(--linia);max-width:62ch}
+.nota p{font-size:15px;color:var(--szept)}
+
+footer{padding:34px 0 46px;font-size:13px;color:var(--szept);border-top:1px solid var(--linia);background:var(--kamien-jasny);margin-top:40px}
+.stopka{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--minia);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="gora">
+  <div class="rama gora__pas">
+    <a class="znak" href="/">Fundacja <i>Świętej Jadwigi</i></a>
+    <a class="wroc" href="/#programy">← Wróć do programów</a>
+  </div>
+</header>
+
+<main>
+  <section class="naglowek">
+    <div class="rama">
+      <p class="rubryka">Program · Terapia i rozwój</p>
+      <h1>Dwie ścieżki wsparcia: <em>terapia</em> i <em>droga życiowa</em></h1>
+      <p class="naglowek__lead">Program łączy pomoc psychologiczną i terapeutyczną z diagnozą oraz doradztwem edukacyjno-zawodowym. Prowadzi go Agnieszka Mokrogulska z Pracowni Umysłu — dla młodzieży od 14. roku życia oraz dorosłych.</p>
+    </div>
+  </section>
+
+  <section class="prowadzi">
+    <div class="rama prowadzi__uklad">
+      <dl class="prowadzi__nota">
+        <dt>Prowadzi</dt><dd>Agnieszka Mokrogulska · Pracownia Umysłu</dd>
+        <dt>Specjalizacja</dt><dd>Psycholog, psychotraumatolog, diagnosta, terapeuta</dd>
+        <dt>Nurt</dt><dd>TSR, elementy CBT i ACT</dd>
+        <dt>Wykształcenie</dt><dd>Uniwersytet SWPS, Warszawa</dd>
+        <dt>Doświadczenie</dt><dd>10+ lat pracy z młodzieżą</dd>
+      </dl>
+      <div class="prowadzi__tekst">
+        <p>Jestem psychologiem, psychotraumatologiem, diagnostą i terapeutą oraz właścicielem firmy Pracownia Umysłu. W swojej pracy łączę pomoc psychologiczną i terapeutyczną, diagnozę, wsparcie rozwojowe oraz doradztwo edukacyjno-zawodowe. Szczególnym obszarem mojej pracy jest pomoc młodzieży od 14. roku życia oraz młodym dorosłym — zarówno w zakresie trudności emocjonalnych i kryzysów, jak i rozwoju osobistego, społecznego oraz planowania dalszej ścieżki edukacyjnej i zawodowej.</p>
+        <p>Pracuję głównie w nurcie terapii skoncentrowanej na rozwiązaniach (TSR), wykorzystując również wybrane techniki terapii poznawczo-behawioralnej (CBT) oraz ACT — terapii akceptacji i zaangażowania. Formę i sposób pracy dobieram indywidualnie, uwzględniając wiek, sytuację życiową, zgłaszane trudności oraz potrzeby osoby korzystającej ze wsparcia. Swoją pracę poddaję regularnej superwizji.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="strumienie">
+    <div class="rama">
+      <div class="strumienie__naglowek">
+        <p class="rubryka">Dwa strumienie programu</p>
+        <h2 style="margin-top:12px">Wybierz, czego dziś potrzebujesz</h2>
+      </div>
+
+      <div class="strumienie__siatka">
+        <article class="strumien" id="terapia">
+          <p class="rubryka">Strumień I</p>
+          <h3>Pomoc psychologiczna i terapeutyczna</h3>
+          <p>Konsultacje i praca terapeutyczna z młodzieżą oraz osobami dorosłymi doświadczającymi trudności emocjonalnych, psychologicznych, relacyjnych i życiowych.</p>
+          <ul>
+            <li>Lęk, napady paniki, nadmierne zamartwianie się i napięcie</li>
+            <li>Obniżony nastrój, trudności depresyjne, brak energii i motywacji</li>
+            <li>Kryzysy emocjonalne i trudne doświadczenia życiowe</li>
+            <li>Doświadczenia traumatyczne i ich konsekwencje dla funkcjonowania emocjonalnego i relacji</li>
+            <li>Niska samoocena, brak pewności siebie, trudności z samoakceptacją</li>
+            <li>Trudności w rozpoznawaniu i regulowaniu emocji</li>
+            <li>Przewlekły stres, przeciążenie, presja i trudności w radzeniu sobie z wymaganiami</li>
+            <li>Perfekcjonizm, lęk przed porażką, presja osiągnięć</li>
+            <li>Trudności w relacjach rodzinnych, rówieśniczych i społecznych</li>
+            <li>Komunikacja, asertywność, stawianie granic</li>
+            <li>Poczucie samotności, odrzucenia i niezrozumienia</li>
+            <li>Wycofanie społeczne i trudności w funkcjonowaniu społecznym</li>
+            <li>Budowanie tożsamości i proces usamodzielniania się</li>
+            <li>Poczucie zagubienia i trudności w podejmowaniu ważnych decyzji</li>
+          </ul>
+          <p style="margin-top:18px;font-size:14.5px;color:var(--szept)">W zależności od sytuacji możliwe są też konsultacje dla rodziców i opiekunów — dotyczące komunikacji z nastolatkiem, trudności wychowawczych czy sposobów wspierania młodej osoby w kryzysie.</p>
+          <a class="strumien__cta" href="/#kontakt">Umów konsultację →</a>
+        </article>
+
+        <article class="strumien" id="rozwoj">
+          <p class="rubryka">Strumień II</p>
+          <h3>Diagnoza i doradztwo edukacyjno-zawodowe</h3>
+          <p>Wspieranie młodzieży w świadomym wyborze dalszej drogi edukacyjnej i zawodowej — od rozpoznania predyspozycji po pierwsze decyzje zawodowe. Ponad 10-letnie doświadczenie w pracy z młodzieżą, w tym przy przygotowaniu do studiów za granicą.</p>
+          <ul>
+            <li>Rozpoznawanie mocnych stron, zainteresowań i predyspozycji</li>
+            <li>Określanie potencjału i obszarów wymagających rozwoju</li>
+            <li>Wybór szkoły, profilu kształcenia i kierunku studiów</li>
+            <li>Przygotowanie do rekrutacji na uczelnie zagraniczne</li>
+            <li>Planowanie rozwoju kompetencji i wyznaczanie celów</li>
+            <li>Tworzenie indywidualnego planu rozwoju</li>
+            <li>Przygotowanie do wejścia na rynek pracy</li>
+          </ul>
+          <p style="margin-top:18px;font-size:14.5px;color:var(--szept)">Autorka programu analizy pedagogicznej dla firm korepetycyjnych oraz koncepcji diagnozy psychologicznej młodzieży przygotowującej się do studiów za granicą. Podopieczni podejmowali naukę m.in. na Harvardzie, Stanford, Brown, Cambridge i Oxfordzie.</p>
+          <a class="strumien__cta" href="/#kontakt">Umów konsultację →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dlaKogo">
+    <div class="rama">
+      <p class="rubryka">Kompleksowe podejście</p>
+      <h2 style="margin:12px 0 28px">Trzy uzupełniające się obszary</h2>
+      <div class="dlaKogo__uklad">
+        <div class="dlaKogo__blok">
+          <h3>Wsparcie emocjonalne</h3>
+          <p>Praca z trudnościami emocjonalnymi, kryzysami, stresem, relacjami i doświadczeniami traumatycznymi.</p>
+        </div>
+        <div class="dlaKogo__blok">
+          <h3>Rozwój osobisty i społeczny</h3>
+          <p>Samoświadomość, poczucie własnej wartości, sprawczość, kompetencje społeczne, komunikacja, samodzielność i przygotowanie do dorosłości.</p>
+        </div>
+        <div class="dlaKogo__blok">
+          <h3>Diagnoza i ścieżka rozwoju</h3>
+          <p>Rozpoznawanie mocnych stron i predyspozycji, wybór dalszej drogi edukacyjnej oraz planowanie rozwoju zawodowego.</p>
+        </div>
+        <div class="dlaKogo__blok">
+          <h3>Wsparcie dla rodziców</h3>
+          <p>Konsultacje i poradnictwo dla rodziców i opiekunów — komunikacja z nastolatkiem, sytuacje kryzysowe, decyzje edukacyjne.</p>
+        </div>
+      </div>
+
+      <div class="nota">
+        <p>Wczesne rozpoznanie trudności emocjonalnych, rodzinnych i społecznych oraz zapewnienie odpowiedniego wsparcia może ograniczać ich narastanie i zmniejszać ryzyko długofalowych konsekwencji — zwłaszcza u młodych osób doświadczających kryzysów, trudnej sytuacji rodzinnej czy problemów w środowisku szkolnym. W sprawie konsultacji lub współpracy prosimy o kontakt: rexhedvigis@gmail.com.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="rama stopka">
+    <span>© 2026 Fundacja Świętej Jadwigi · ul. Koszykowa 1/9, 00-564 Warszawa</span>
+    <span>KRS 0001251150 · NIP 7011323791 · REGON 545301403</span>
+  </div>
+</footer>
+
+</body>
+</html>
