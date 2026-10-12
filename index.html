@@ -66,6 +66,25 @@ p{margin:0 0 1em}
 .nawi a{text-decoration:none;color:var(--szept);padding-bottom:2px;border-bottom:1px solid transparent}
 .nawi a:hover{color:var(--atrament);border-bottom-color:var(--minia)}
 
+.nawi a.nawi__wyr{color:var(--minia);font-weight:600}
+
+/* ——— zajawka FALOCHRON ——— */
+.alert{background:var(--lazur-glab,#1A2750);color:#E7E9F2;margin-top:22px}
+.alert__uklad{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(30px,4.5vw,52px) 0}
+.alert__rub{font-family:var(--rubryka);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#E9B8AE;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.alert__rub::before{content:"";width:9px;height:9px;border-radius:50%;background:#E05A4A;box-shadow:0 0 0 4px rgba(224,90,74,.25)}
+.alert h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.1;margin:0}
+.alert h2 em{font-style:italic;color:#C8A75A}
+.alert p{color:#C3C9DD;margin:16px 0 0;max-width:58ch}
+.alert__akcje{display:grid;gap:12px}
+.alert .btn{text-align:center}
+.alert .btn--zloto{background:#C8A75A;border-color:#C8A75A;color:#1A2750}
+.alert .btn--zloto:hover{background:#fff;border-color:#fff}
+.alert .btn--jasny{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.alert .btn--jasny:hover{border-color:#C8A75A;color:#C8A75A;background:transparent}
+.alert__drobne{font-size:13.5px;color:#8E9AC0;margin:2px 0 0;text-align:center}
+@media (max-width:820px){.alert__uklad{grid-template-columns:1fr}}
+
 /* ——— hero ——— */
 .hero{padding:clamp(56px,10vw,120px) 0 clamp(40px,6vw,72px)}
 .hero__rub{display:flex;align-items:center;gap:14px;margin-bottom:26px}
@@ -232,6 +251,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
   <div class="rama gora__pas">
     <a class="znak" href="#"><b>Fundacja</b> <i>Świętej Jadwigi</i></a>
     <nav class="nawi" aria-label="Główna">
+      <a href="/falochron.html" class="nawi__wyr">FALOCHRON dla szkół</a>
+      <a href="/materialy.html">Materiały dla wychowawców</a>
       <a href="#aktualnosci">Aktualności</a>
       <a href="#rejestr">Gdzie działamy</a>
       <a href="#programy">Programy</a>
@@ -244,6 +265,21 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
 </header>
 
 <main id="tresc">
+
+  <section class="alert" aria-labelledby="alert-tytul">
+    <div class="rama alert__uklad">
+      <div>
+        <p class="alert__rub">W związku z wydarzeniami w szkołach</p>
+        <h2 id="alert-tytul">Chcemy pomóc. <em>FALOCHRON</em> — program dla szkół, nauczycieli i rodziców</h2>
+        <p>Warsztaty o radzeniu sobie z lękiem i stresem, bezpieczeństwie w sieci i fałszywych alarmach, szkolenie rad pedagogicznych z reagowania w kryzysie. Program może zamówić bezpośrednio szkoła albo gmina.</p>
+      </div>
+      <div class="alert__akcje">
+        <a class="btn btn--zloto" href="/falochron.html">Poznaj program</a>
+        <a class="btn btn--jasny" href="/materialy.html">Bezpłatne karty pracy dla wychowawców</a>
+        <p class="alert__drobne">Pomoc teraz: 116 111 · 800 12 12 12 · w zagrożeniu 112</p>
+      </div>
+    </div>
+  </section>
 
   <section class="hero">
     <div class="rama">
@@ -265,6 +301,14 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
       <div class="aktualnosci__glowa">
         <h2>Aktualności</h2>
       </div>
+
+      <article class="wpis odslon">
+        <time datetime="2026-10-12">Październik 2026</time>
+        <div>
+          <h3><a href="/falochron.html">FALOCHRON: program bezpieczeństwa i odporności dla szkół</a></h3>
+          <p>W odpowiedzi na niepokojące wydarzenia w szkołach uruchamiamy program dla uczniów klas 7–8 i szkół ponadpodstawowych, nauczycieli i rodziców. Sześć modułów: emocje i stres, cyfrowy umiar, wsparcie w kryzysie, integracja klasy, praca z głosem oraz dezinformacja i AI. Program może zamówić szkoła albo gmina. Dla wychowawców przygotowaliśmy <a href="/materialy.html">bezpłatne karty pracy i scenariusze lekcji</a>. 13 listopada startuje akcja „Możesz. Ale czy musisz?”.</p>
+        </div>
+      </article>
 
       <article class="wpis odslon">
         <time datetime="2026-09">Wrzesień 2026</time>
@@ -337,12 +381,25 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
   <section class="programy" id="programy">
     <div class="rama">
       <div class="programy__intro">
-        <p class="rubryka">Siedem programów</p>
+        <p class="rubryka">Osiem programów</p>
         <h2 style="margin:16px 0 18px">Opieka, samodzielność, pamięć</h2>
-        <p>Pięć programów społecznych prowadzimy w konkretnych miejscach i dla konkretnych osób. Dwa pozostałe — kulturalny i wydawniczy — utrzymują dziedzictwo, od którego fundacja wzięła nazwę.</p>
+        <p>Sześć programów społecznych prowadzimy w konkretnych miejscach i dla konkretnych osób. Dwa pozostałe — kulturalny i wydawniczy — utrzymują dziedzictwo, od którego fundacja wzięła nazwę.</p>
       </div>
 
       <div class="siatka">
+        <article class="karta odslon">
+          <p class="rubryka">Program · Szkoły · nowość</p>
+          <h3>FALOCHRON</h3>
+          <p>Bezpieczeństwo, emocje, relacje i zasoby. Program dla młodzieży, nauczycieli i rodziców, realizowany w szkołach — na zamówienie szkoły albo gminy.</p>
+          <ul>
+            <li>Uważność i radzenie sobie ze stresem</li>
+            <li>Szkolenie rad pedagogicznych: szkoła wrażliwa na traumę</li>
+            <li>Dezinformacja, fałszywe alarmy i AI</li>
+            <li>Akcja „Możesz. Ale czy musisz?” od 13 listopada</li>
+          </ul>
+          <p style="margin-top:20px"><a href="/falochron.html">Poznaj program →</a> &nbsp;·&nbsp; <a href="/materialy.html">Bezpłatne materiały →</a></p>
+        </article>
+
         <article class="karta odslon">
           <p class="rubryka">Program · Opieka</p>
           <h3>Kluby seniora</h3>
@@ -503,7 +560,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
       <div class="kontakt__glowa">
         <p class="rubryka">Kontakt</p>
         <h2 style="margin:16px 0 8px">Napisz do nas</h2>
-        <p style="color:#2C3145;max-width:52ch">Jeżeli reprezentujesz gminę, ośrodek pomocy społecznej albo organizację i szukasz partnera do prowadzenia usług społecznych — odpisujemy w ciągu dwóch dni roboczych.</p>
+        <p style="color:#2C3145;max-width:52ch">Jeżeli reprezentujesz szkołę, gminę, ośrodek pomocy społecznej albo organizację i szukasz partnera do prowadzenia usług społecznych — odpisujemy w ciągu dwóch dni roboczych.</p>
       </div>
       <div class="kontakt__uklad">
         <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="formularz" action="/dziekujemy.html">
@@ -531,6 +588,8 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
           <div class="pole">
             <label for="temat">Czego dotyczy sprawa</label>
             <select id="temat" name="temat">
+              <option>FALOCHRON — program dla szkoły</option>
+              <option>FALOCHRON — program dla gminy</option>
               <option>Współpraca z gminą lub OPS-em</option>
               <option>Wsparcie grantowe dla organizacji</option>
               <option>Klub seniora</option>
