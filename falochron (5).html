@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FALOCHRON — program bezpieczeństwa i odporności dla szkół · Fundacja Świętej Jadwigi</title>
+<meta name="description" content="FALOCHRON: program Fundacji Świętej Jadwigi dla młodzieży, nauczycieli i rodziców — emocje, bezpieczeństwo cyfrowe, wsparcie w kryzysie, dezinformacja. Zamówienie przez gminę albo bezpośrednio przez szkołę.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --atrament:#14172A;--lazur:#23346B;--lazur-glab:#1A2750;--minia:#A8322A;--zloto:#9C7C33;
+  --kamien:#E9EAE5;--kamien-jasny:#F2F3EF;--szept:#5B6070;--linia:rgba(20,23,42,.16);
+  --display:"Cardo",Georgia,serif;--tekst:"IBM Plex Sans",system-ui,sans-serif;
+  --rubryka:"IBM Plex Mono",ui-monospace,monospace;--maks:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--kamien);color:var(--atrament);font-family:var(--tekst);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.rama{width:min(100% - 44px,var(--maks));margin-inline:auto}
+.rubryka{font-family:var(--rubryka);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--minia);font-weight:500;margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.04}
+h1 em{font-style:italic;color:var(--lazur)}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15}
+h3{font-size:1.3rem;line-height:1.25}
+a{color:inherit}
+p{margin:0 0 1em}
+
+.gora{padding:26px 0 0}
+.gora__pas{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.znak{font-family:var(--display);font-size:1.12rem;letter-spacing:.02em;text-decoration:none}
+.znak i{font-style:italic;color:var(--zloto)}
+.wroc{font-family:var(--rubryka);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--szept);text-decoration:none}
+.wroc:hover{color:var(--minia)}
+
+.btn{display:inline-block;font-family:var(--rubryka);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  padding:14px 24px;border:1px solid var(--atrament);background:var(--atrament);color:var(--kamien-jasny);transition:background .2s,color .2s}
+.btn:hover{background:var(--lazur);border-color:var(--lazur)}
+.btn--pusty{background:transparent;color:var(--atrament);border-color:var(--linia)}
+.btn--pusty:hover{background:transparent;color:var(--minia);border-color:var(--minia)}
+.akcje{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+
+.naglowek{padding:clamp(46px,8vw,96px) 0 clamp(30px,4vw,48px)}
+.naglowek h1{max-width:14ch;margin-top:20px}
+.naglowek__lead{max-width:58ch;margin-top:24px;font-size:1.15rem;color:#2C3145}
+.motto{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--lazur);border-left:2px solid var(--zloto);padding-left:18px;margin-top:28px;max-width:46ch}
+
+.sekcja{padding:clamp(40px,6vw,72px) 0;border-top:1px solid var(--linia)}
+.uklad{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media (max-width:820px){.uklad{grid-template-columns:1fr}}
+.tekst p,.tekst li{color:#2C3145;max-width:62ch}
+.tekst ul{padding:0;list-style:none;margin:0 0 1em}
+.tekst li{padding:8px 0 8px 22px;border-top:1px solid var(--linia);position:relative}
+.tekst li::before{content:"—";position:absolute;left:0;color:var(--zloto)}
+
+.zasada{background:var(--kamien-jasny);border-top:2px solid var(--zloto);padding:22px 24px;font-size:15.5px;color:#2C3145}
+
+/* dwie ścieżki zamówienia */
+.sciezki{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linia);border:1px solid var(--linia);margin-top:28px}
+@media (max-width:760px){.sciezki{grid-template-columns:1fr}}
+.sciezka{background:var(--kamien);padding:clamp(24px,3vw,36px)}
+.sciezka h3{margin:12px 0 10px;font-size:1.6rem}
+.sciezka p{font-size:15.5px;color:#2C3145}
+.sciezka ul{list-style:none;padding:0;margin:14px 0 0;font-size:15px}
+.sciezka li{padding:7px 0 7px 18px;border-top:1px solid var(--linia);position:relative;color:var(--szept)}
+.sciezka li::before{content:"—";position:absolute;left:0;color:var(--zloto)}
+
+/* moduły */
+.moduly{list-style:none;padding:0;margin:28px 0 0;border-top:2px solid var(--atrament)}
+.modul{display:grid;grid-template-columns:3.2rem 1.1fr 1.4fr .9fr;gap:12px 28px;padding:22px 0;border-bottom:1px solid var(--linia);align-items:baseline}
+.modul__nr{font-family:var(--display);font-size:2rem;color:var(--zloto);line-height:1}
+.modul h3{font-size:1.35rem}
+.modul__opis{font-size:15px;color:#2C3145}
+.modul__kto{font-size:14px;color:var(--szept)}
+.modul__kto b{display:block;font-weight:500;color:var(--atrament)}
+.modul--pakiet .modul__nr{color:var(--minia)}
+.znacznik{display:inline-block;margin-top:6px;font-family:var(--rubryka);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--minia);border:1px solid var(--minia);padding:3px 7px}
+@media (max-width:820px){.modul{grid-template-columns:2.6rem 1fr}.modul__opis,.modul__kto{grid-column:2}}
+
+/* akcja */
+.akcja{background:var(--lazur-glab);color:#E7E9F2}
+.akcja .rubryka{color:#C8A75A}
+.akcja h2{color:#fff}
+.akcja p,.akcja li{color:#C3C9DD}
+.akcja .tekst li{border-top-color:rgba(255,255,255,.15)}
+.akcja .btn{background:var(--zloto);border-color:var(--zloto);color:var(--lazur-glab)}
+.akcja .btn:hover{background:#fff;border-color:#fff}
+
+/* zespół */
+.zespol{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:28px;margin-top:28px}
+.osoba{border-top:1px solid var(--atrament);padding-top:16px}
+.osoba__foto{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;margin-bottom:16px;background:var(--kamien-jasny);filter:grayscale(.15)}
+.osoba__foto--brak{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:3.2rem;color:var(--zloto);border:1px solid var(--linia);filter:none}
+.osoba h3{font-size:1.25rem}
+.osoba .rola{font-family:var(--rubryka);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--minia);margin:4px 0 10px}
+.osoba p{font-size:14.5px;color:#2C3145}
+
+.kroki{counter-reset:k;list-style:none;padding:0;margin:0}
+.kroki li{counter-increment:k;display:grid;grid-template-columns:2.6rem 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--linia);color:#2C3145}
+.kroki li::before{content:counter(k);font-family:var(--display);font-size:1.6rem;color:var(--lazur);line-height:1.1}
+
+.pomoc{background:#F6F1EF;border-left:3px solid var(--minia);padding:18px 22px;font-size:15px;color:#2C3145;margin-top:28px}
+
+footer{padding:34px 0 46px;font-size:13px;color:var(--szept);border-top:1px solid var(--linia);background:var(--kamien-jasny)}
+.stopka{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+a:focus-visible{outline:2px solid var(--minia);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="gora">
+  <div class="rama gora__pas">
+    <a class="znak" href="/">Fundacja <i>Świętej Jadwigi</i></a>
+    <a class="wroc" href="/#programy">← Strona główna</a>
+  </div>
+</header>
+
+<main>
+  <article>
+  <section class="naglowek">
+    <div class="rama">
+      <p class="rubryka">Program dla szkół · rok szkolny 2026/2027</p>
+      <h1>FALOCHRON — <em>chcemy pomóc szkołom</em></h1>
+      <p class="naglowek__lead">Niepokojące wydarzenia w szkołach, pogłoski i treści budzące lęk dotykają uczniów, nauczycieli i rodziców. Przygotowaliśmy program, który szkoła może zamówić u nas bezpośrednio albo przez gminę. Uczy radzenia sobie z emocjami, krytycznej oceny informacji i wspólnego reagowania.</p>
+      <p class="motto">Falochron nie zatrzymuje wszystkich fal. Daje oparcie, dzięki któremu łatwiej przez nie przejść.</p>
+      <div class="akcje">
+        <a class="btn" href="#zamowienie">Jak zamówić program</a>
+        <a class="btn btn--pusty" href="/materialy.html">Bezpłatne materiały dla wychowawców</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja">
+    <div class="rama uklad">
+      <div>
+        <p class="rubryka">Dlaczego teraz</p>
+        <h2 style="margin-top:14px">Trzy umiejętności, których młodzież potrzebuje jednocześnie</h2>
+      </div>
+      <div class="tekst">
+        <p>Młodzi ludzie muszą dziś radzić sobie z lękiem, odróżniać prawdę od fałszywego alarmu i wiedzieć, co zrobić, gdy coś niepokojącego dzieje się obok nich. FALOCHRON łączy te trzy obszary w jeden program, prowadzony w szkole przez doświadczonych psychologów, pedagogów i trenerów.</p>
+        <p>Program odpowiada na priorytety Ministerstwa Edukacji Narodowej na rok szkolny 2026/2027: bezpieczeństwo, odporność społeczną i zdrowie psychiczne uczniów.</p>
+        <ul>
+          <li><b>Dla kogo:</b> uczniowie klas 7–8 szkół podstawowych i szkół ponadpodstawowych (13–19 lat), nauczyciele i wychowawcy, pracownicy niepedagogiczni, rodzice.</li>
+          <li><b>Forma:</b> zajęcia w godzinach wychowawczych, kurs uważności w cyklu spotkań, szkolenia rad pedagogicznych, spotkania dla rodziców wieczorem lub online.</li>
+        </ul>
+        <div class="zasada"><b>Ważne:</b> program uzupełnia pracę psychologa szkolnego i poradni psychologiczno-pedagogicznej, a nie ją zastępuje. Obejmuje psychoedukację, profilaktykę i kierowanie do specjalistów. Nie jest leczeniem ani interwencją kryzysową. W materiałach i na zajęciach nie omawiamy sprawców, metod ani szczegółów ataków — uczymy rozpoznawania sygnałów kryzysu, bezpiecznego reagowania i proszenia o pomoc. Pracujemy zgodnie z naszymi <a href="/standardy-ochrony-maloletnich.html">Standardami ochrony małoletnich</a>.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja" id="zamowienie">
+    <div class="rama">
+      <p class="rubryka">Dwie drogi zamówienia</p>
+      <h2 style="margin-top:14px;max-width:24ch">Program może zamówić gmina — albo sama szkoła</h2>
+      <div class="sciezki">
+        <div class="sciezka">
+          <p class="rubryka">Zamawia szkoła</p>
+          <h3>Dyrektor, bez czekania</h3>
+          <p>Szkoła może zamówić u nas program bezpośrednio — dla jednej klasy, całego rocznika albo rady pedagogicznej. Ustalamy zakres, termin i wycenę w jednej rozmowie.</p>
+          <ul>
+            <li>budżet szkoły na pomoc psychologiczno-pedagogiczną</li>
+            <li>środki na doskonalenie zawodowe nauczycieli (szkolenie rady pedagogicznej)</li>
+            <li>środki rady rodziców</li>
+            <li>wspólny wniosek grantowy, w którym szkoła jest wnioskodawcą, a fundacja partnerem — dokumentację przygotowujemy my</li>
+          </ul>
+        </div>
+        <div class="sciezka">
+          <p class="rubryka">Zamawia gmina</p>
+          <h3>Dla wszystkich szkół w gminie</h3>
+          <p>Gmina może objąć programem wszystkie swoje szkoły i włączyć w to akcję „Możesz. Ale czy musisz?”. Po realizacji otrzymuje raport z wynikami.</p>
+          <ul>
+            <li>gminny program profilaktyki i rozwiązywania problemów alkoholowych oraz przeciwdziałania narkomanii — w zakresie profilaktyki dla dzieci i młodzieży (zakres do potwierdzenia z zapisami programu gminy)</li>
+            <li>zlecenie zadania organizacji pozarządowej: otwarty konkurs ofert lub tryb pozakonkursowy (art. 19a ustawy o pożytku publicznym)</li>
+            <li>wspólny wniosek do programów regionalnych i krajowych, np. edukacja na rzecz bezpieczeństwa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="akcje"><a class="btn" href="/#kontakt">Zapytaj o program i wycenę</a></div>
+    </div>
+  </section>
+
+  <section class="sekcja">
+    <div class="rama">
+      <p class="rubryka">Sześć modułów</p>
+      <h2 style="margin-top:14px">Całość albo pakiet podstawowy</h2>
+      <p style="color:#2C3145;max-width:60ch;margin-top:14px">Można zamówić cały program albo pakiet podstawowy (moduły 1, 3 i 4) i uzupełniać go o kolejne moduły.</p>
+      <ul class="moduly">
+        <li class="modul modul--pakiet"><span class="modul__nr">1</span><div><h3>Spokojna głowa</h3><span class="znacznik">Pakiet podstawowy</span></div><p class="modul__opis">Uważność i zarządzanie stresem. Kurs MBLC-YA: rozpoznawanie napięcia, uwaga, emocje, życzliwość wobec siebie, świadome wybory. Warsztaty o złości, lęku, przeciążeniu i presji. Kurs uważności dla nauczycieli (przeciw wypaleniu) i kurs rodzicielstwa z uważnością dla rodziców.</p><p class="modul__kto"><b>Monika Kużelewska-Turczynowicz</b>uczniowie, nauczyciele, rodzice</p></li>
+        <li class="modul"><span class="modul__nr">2</span><div><h3>Cyfrowy umiar i bezpieczeństwo</h3></div><p class="modul__opis">Higiena cyfrowa, sen i uwaga, porównania społeczne, cyberprzemoc, ochrona prywatności, bezpieczne zgłaszanie zagrożeń, krytyczne korzystanie z treści online i AI. Klasowe zasady korzystania z telefonów.</p><p class="modul__kto"><b>Monika Kużelewska-Turczynowicz</b>uczniowie</p></li>
+        <li class="modul modul--pakiet"><span class="modul__nr">3</span><div><h3>Wsparcie w kryzysie — szkoła wrażliwa na traumę</h3><span class="znacznik">Pakiet podstawowy</span></div><p class="modul__opis">Szkolenie rady pedagogicznej: sygnały przeciążenia i kryzysu, reagowanie na groźby i niepokojące komunikaty, rozmowa z uczniem, procedury bezpieczeństwa, ścieżki pomocy. Konsultacje indywidualne dla młodzieży od 14. roku życia.</p><p class="modul__kto"><b>Agnieszka Mokrogulska</b>rada pedagogiczna, młodzież</p></li>
+        <li class="modul modul--pakiet"><span class="modul__nr">4</span><div><h3>Klasa, która się wspiera</h3><span class="znacznik">Pakiet podstawowy</span></div><p class="modul__opis">Integracja, przynależność, granice, empatia, reagowanie świadków przemocy, rozwiązywanie konfliktów, współodpowiedzialność za klimat szkoły. Własne inicjatywy młodzieży na rzecz bezpieczeństwa.</p><p class="modul__kto"><b>Marta Deneka</b>klasy</p></li>
+        <li class="modul"><span class="modul__nr">5</span><div><h3>Głos bez krzyku</h3></div><p class="modul__opis">Praca z głosem i oddechem, rozpoznawanie pobudzenia, komunikowanie granic i potrzeb, wyrażanie emocji bez eskalacji konfliktu.</p><p class="modul__kto"><b>dr Izabela Kopeć</b>uczniowie</p></li>
+        <li class="modul"><span class="modul__nr">6</span><div><h3>Sprawdź, zanim podasz dalej</h3></div><p class="modul__opis">Dezinformacja, fałszywe alarmy, treści generowane przez AI, ochrona przed manipulacją, nieudostępnianie drastycznych materiałów, kultura dialogu. Efekt: klasowy „Kodeks uprzejmości i bezpieczeństwa”.</p><p class="modul__kto"><b>Dorota Burzec</b>uczniowie</p></li>
+      </ul>
+      <p style="color:var(--szept);font-size:15px;margin-top:22px;max-width:64ch"><b style="color:var(--atrament);font-weight:600">Efekty i ewaluacja:</b> większa wiedza uczniów o radzeniu sobie ze stresem, bezpieczeństwie cyfrowym i ścieżkach pomocy; silniejsze poczucie przynależności w klasie. Ankiety przed i po zajęciach, tam gdzie to możliwe pomiar odroczony. Zamawiający otrzymuje raport z realizacji.</p>
+    </div>
+  </section>
+
+  <section class="sekcja akcja">
+    <div class="rama uklad">
+      <div>
+        <p class="rubryka">Akcja społeczna · start 13 listopada</p>
+        <h2 style="margin-top:14px">„Możesz. Ale czy musisz?”</h2>
+        <p style="margin-top:16px">Wszystko zaczyna się od słowa. Uczymy, że można mówić stanowczo i jednocześnie z szacunkiem, a uprzejmość to umiejętność, nie słabość. Start w Światowy Dzień Życzliwości.</p>
+        <div class="akcje"><a class="btn" href="/materialy.html">Pobierz materiały do akcji</a></div>
+      </div>
+      <div class="tekst">
+        <ul>
+          <li><b style="color:#fff">Tydzień uprzejmości w szkołach</b> — scenariusz lekcji wychowawczej, karty pracy „Powiedz to inaczej” i „Kodeks uprzejmości”, plakat.</li>
+          <li><b style="color:#fff">Deklaracja „Biorę odpowiedzialność za swoje słowa”</b> — dla uczniów, klas i szkół. Gmina również może ją podpisać.</li>
+          <li><b style="color:#fff">Szkolni ambasadorzy</b> — 2–3 uczniów w każdej szkole, przeszkolonych do prowadzenia akcji u siebie.</li>
+          <li><b style="color:#fff">Seria wideo #PowiedzToInaczej</b> — krótkie filmy i wyzwanie dla klas.</li>
+          <li><b style="color:#fff">Dzienniki offline Hedvigis Rex</b> — „Spokojna głowa” (30 dni, dla młodzieży) i „Między nami” (dziennik rodzic–dziecko). Codzienna chwila bez ekranu i początek rozmowy w domu.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja">
+    <div class="rama">
+      <p class="rubryka">Zespół</p>
+      <h2 style="margin-top:14px">Kto prowadzi zajęcia</h2>
+      <div class="zespol">
+        <div class="osoba"><img class="osoba__foto" src="/zespol-monika-kuzelewska-turczynowicz.jpg" alt="Monika Kużelewska-Turczynowicz" width="480" height="480" loading="lazy"><h3>Monika Kużelewska-Turczynowicz</h3><p class="rola">Liderka projektu</p><p>Psychoterapeutka Gestalt, certyfikowana nauczycielka kursów uważności i współczucia, superwizorka w Polskim Centrum Uważności i Współczucia, nauczycielka programów MBCT i MCP (Rodzicielstwo z uważnością i współczuciem), wykładowczyni akademicka (SWPS Warszawa).</p></div>
+        <div class="osoba"><img class="osoba__foto" src="/zespol-agnieszka-mokrogulska.jpg" alt="Agnieszka Mokrogulska" width="480" height="480" loading="lazy"><h3>Agnieszka Mokrogulska</h3><p class="rola">Wsparcie w kryzysie</p><p>Psycholożka, psychotraumatolożka, diagnostka i terapeutka (nurt TSR), absolwentka SWPS, właścicielka Pracowni Umysłu. <a href="/terapia.html">Więcej o jej pracy →</a></p></div>
+        <div class="osoba"><div class="osoba__foto osoba__foto--brak" aria-hidden="true">MD</div><h3>Marta Deneka</h3><p class="rola">Integracja klasy</p><p>Pedagog, na co dzień pracuje w szkole jako nauczycielka języka angielskiego. Prowadzi zajęcia z dobrostanu (wellbeingu) dla dzieci i młodzieży na Lubelszczyźnie, jest też wolontariuszką i organizatorką warsztatów.</p></div>
+        <div class="osoba"><img class="osoba__foto" src="/zespol-izabela-kopec.jpg" alt="dr Izabela Kopeć" width="480" height="480" loading="lazy"><h3>dr Izabela Kopeć</h3><p class="rola">Głos i oddech</p><p>Mezzosopran liryczny, doktor sztuk muzycznych i wykładowczyni akademicka Uniwersytetu Muzycznego Fryderyka Chopina w Warszawie, absolwentka Akademii Muzycznej we Wrocławiu. Kompozytorka i producentka muzyczna, prezes Fundacji Muzyka-Sztuka-Kultura. Autorka m.in. płyt „Piazzolla. Show Me Your Tango” i „Songs &amp; Fantasmagories”, stypendystka Ministra Kultury i Dziedzictwa Narodowego.</p></div>
+        <div class="osoba"><img class="osoba__foto" src="/zespol-dorota-burzec.jpg" alt="Dorota Burzec" width="480" height="480" loading="lazy"><h3>Dorota Burzec</h3><p class="rola">Koordynacja, dezinformacja i AI</p><p>Dyrektor Programu Fundacji Świętej Jadwigi. Dziennikarka (Newsweek, Forbes, Rzeczpospolita), specjalistka ds. sztucznej inteligencji. Autorka koncepcji dzienników i akcji „Możesz. Ale czy musisz?”.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja">
+    <div class="rama uklad">
+      <div>
+        <p class="rubryka">Jak współpracujemy</p>
+        <h2 style="margin-top:14px">Od rozmowy do raportu</h2>
+      </div>
+      <div>
+        <ol class="kroki">
+          <li><span><b>Rozmowa i diagnoza.</b> Ustalamy z dyrekcją lub gminą, które klasy obejmie program i jakie są najpilniejsze potrzeby.</span></li>
+          <li><span><b>Dobór modułów i harmonogram.</b> Proponujemy pakiet dopasowany do szkoły, terminów i budżetu; przygotowujemy wycenę.</span></li>
+          <li><span><b>Realizacja w szkole.</b> We współpracy z dyrekcją, psychologiem szkolnym i poradnią psychologiczno-pedagogiczną.</span></li>
+          <li><span><b>Raport.</b> Liczba uczestników, wyniki ankiet, rekomendacje na kolejny rok.</span></li>
+        </ol>
+        <div class="akcje">
+          <a class="btn" href="/#kontakt">Napisz do nas</a>
+          <a class="btn btn--pusty" href="tel:+48577527677">Zadzwoń: 577 527 677</a>
+        </div>
+        <p style="font-size:14.5px;color:var(--szept);margin-top:16px">Osoba do kontaktu: Dorota Burzec, Dyrektor Programu · <a href="mailto:rexhedvigis@gmail.com">rexhedvigis@gmail.com</a> · 515 900 812</p>
+        <div class="pomoc"><b>Jeśli Ty lub ktoś bliski potrzebuje pomocy teraz:</b> 116 111 — telefon zaufania dla dzieci i młodzieży · 800 12 12 12 — Dziecięcy Telefon Zaufania Rzecznika Praw Dziecka · w zagrożeniu życia 112.</div>
+      </div>
+    </div>
+  </section>
+  </article>
+</main>
+
+<section class="dok" aria-labelledby="dok-tytul">
+<style>
+.dok{background:#F2F3EF;border-top:1px solid rgba(20,23,42,.16);padding:clamp(36px,5vw,56px) 0}
+.dok__glowa{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid #14172A;padding-bottom:10px;margin-bottom:4px}
+.dok__glowa h2{font-family:"Cardo",Georgia,serif;font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);margin:0}
+.dok__glowa p{margin:0;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5B6070}
+.dok__siatka{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+@media (max-width:900px){.dok__siatka{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.dok__siatka{grid-template-columns:1fr}}
+.dok__el{display:block;text-decoration:none;color:#14172A;padding:18px 0;border-bottom:1px solid rgba(20,23,42,.16)}
+.dok__el b{display:block;font-family:"Cardo",Georgia,serif;font-weight:400;font-size:1.2rem;line-height:1.2;margin-bottom:4px}
+.dok__el span{display:block;font-size:14px;color:#5B6070;line-height:1.45}
+.dok__el:hover b{color:#A8322A}
+.dok__el:focus-visible{outline:2px solid #A8322A;outline-offset:3px}
+</style>
+<div class="rama">
+  <div class="dok__glowa"><h2 id="dok-tytul">Dokumenty fundacji</h2><p>Statut · strategia · bezpieczeństwo</p></div>
+  <div class="dok__siatka">
+    <a class="dok__el" href="/statut-fundacji.pdf"><b>Statut fundacji</b><span>Tekst jednolity z 25 sierpnia 2026 r. Cele, organy i zasady działania Fundacji (PDF).</span></a>
+    <a class="dok__el" href="/strategia-fundacji-2026-2030.pdf"><b>Strategia na lata 2026–2030</b><span>Misja, wartości i cele w sześciu obszarach działania Fundacji (PDF).</span></a>
+    <a class="dok__el" href="/standardy-ochrony-maloletnich.html"><b>Standardy ochrony małoletnich</b><span>Jak dbamy o bezpieczeństwo dzieci na naszych zajęciach. Wersja pełna i dokumenty do pobrania.</span></a>
+    <a class="dok__el" href="/standardy-ochrony-maloletnich.html#dla-dzieci"><b>Wersja dla dzieci i młodzieży</b><span>„Masz prawo czuć się bezpiecznie” — zasady prostym językiem i telefony zaufania.</span></a>
+    <a class="dok__el" href="/standardy-ochrony-maloletnich.html#zglos"><b>Zgłoś niepokój</b><span>Formularz dla dzieci, rodziców i nauczycieli. Trafia do koordynatorki ds. ochrony małoletnich.</span></a>
+    <a class="dok__el" href="/polityka-prywatnosci.html"><b>Polityka prywatności</b><span>Jakie dane zbieramy przez stronę i formularze, w jakim celu i jakie masz prawa.</span></a>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="rama stopka">
+    <span>© 2026 Fundacja Świętej Jadwigi · hedvigisrex.pl · <a href="/polityka-prywatnosci.html">Polityka prywatności</a> · <a href="/standardy-ochrony-maloletnich.html">Standardy ochrony małoletnich</a></span>
+    <span>KRS 0001251150 · NIP 7011323791 · REGON 545301403</span>
+  </div>
+</footer>
+</body>
+</html>
