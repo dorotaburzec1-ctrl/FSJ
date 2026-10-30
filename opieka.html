@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opieka dzienna dla seniorów — Fundacja Świętej Jadwigi</title>
+<meta name="description" content="Dzienna opieka domowa dla seniorów — Warszawa, Podkarpacie i kolejne miasta. Umowa z Fundacją Świętej Jadwigi. Starannie dobrana opiekunka, wizyta kwalifikacyjna w domu, lista oczekujących.">
+<link rel="canonical" href="https://hedvigisrex.pl/opieka">
+<meta property="og:title" content="Opieka dzienna dla seniorów — sprawdź, czy jesteśmy w Twoim mieście">
+<meta property="og:description" content="Starannie dobrana opiekunka, umowa z fundacją, koordynator zawsze pod telefonem. Dołącz do listy oczekujących.">
+<meta property="og:url" content="https://hedvigisrex.pl/opieka">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --atrament:#14172A; --lazur:#23346B; --lazur-glab:#18234A;
+  --zloto:#9C7C33; --zloto-ciemne:#7A6026; --minia:#A8322A;
+  --szept:#4E5363; --papier:#FBFBF8; --kamien:#EEEFEA; --linia:#C9CBD3;
+  --display:'Cardo',Georgia,serif; --tekst:'IBM Plex Sans',system-ui,sans-serif; --rubryka:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papier);color:var(--atrament);font-family:var(--tekst);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--lazur)}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+h1 em,h2 em{color:var(--zloto-ciemne)}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+h3{font-size:1.4rem}
+p{margin:0}
+.rama{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.rubryka{font-family:var(--rubryka);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--zloto-ciemne)}
+.btn{display:inline-block;background:var(--lazur);color:#fff;border:1px solid var(--lazur);padding:13px 22px;font-family:var(--tekst);font-weight:500;font-size:15.5px;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--atrament);border-color:var(--atrament)}
+.btn--pusty{background:transparent;color:var(--lazur)}
+.btn--pusty:hover{background:var(--lazur);color:#fff}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--zloto);outline-offset:2px}
+
+/* góra */
+.gora{border-bottom:1px solid var(--linia);background:var(--papier)}
+.gora__pas{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap}
+.znak{font-family:var(--display);font-size:1.35rem;color:var(--atrament);text-decoration:none}
+.znak i{color:var(--zloto-ciemne)}
+.wroc{font-size:14.5px;color:var(--szept);text-decoration:none}
+.wroc:hover{color:var(--lazur)}
+
+/* nagłówek */
+.naglowek{padding:clamp(56px,9vw,110px) 0 clamp(48px,7vw,80px);border-bottom:1px solid var(--linia);position:relative;overflow:hidden}
+.naglowek::after{content:"";position:absolute;right:clamp(16px,4vw,40px);top:0;bottom:0;width:5px;border-left:1px solid rgba(156,124,51,.5);border-right:1px solid rgba(156,124,51,.5)}
+.naglowek h1{margin-top:18px;max-width:17ch}
+.naglowek__lead{margin-top:22px;max-width:60ch;font-size:clamp(1.05rem,1.6vw,1.2rem);color:#2C3145}
+.akcje{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:14.5px;color:var(--szept)}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--minia)}
+
+/* sekcje */
+.sekcja{padding:clamp(56px,8vw,96px) 0;border-bottom:1px solid var(--linia)}
+.sekcja--kamien{background:var(--kamien)}
+.sekcja h2{margin-top:14px;max-width:24ch}
+.wstep{margin-top:16px;max-width:62ch;color:#2C3145}
+
+/* zakres */
+.zakres{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linia);border:1px solid var(--linia);margin-top:36px}
+@media (max-width:900px){.zakres{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.zakres{grid-template-columns:1fr}}
+.zakres__el{background:var(--papier);padding:28px 26px}
+.zakres__el h3{font-size:1.3rem;margin-top:10px}
+.zakres__el p{margin-top:10px;font-size:15.5px;color:#2C3145}
+.zakres__nr{font-family:var(--display);font-size:1.8rem;color:var(--zloto);line-height:1}
+
+/* kroki */
+.kroki{list-style:none;padding:0;margin:36px 0 0;border-top:2px solid var(--atrament)}
+.krok{display:grid;grid-template-columns:3.2rem 1fr 1.4fr;gap:10px 28px;padding:22px 0;border-bottom:1px solid var(--linia);align-items:baseline}
+.krok__nr{font-family:var(--display);font-size:2rem;color:var(--zloto);line-height:1}
+.krok p{font-size:15.5px;color:#2C3145}
+@media (max-width:760px){.krok{grid-template-columns:2.6rem 1fr}.krok p{grid-column:2}}
+
+/* zasady */
+.uklad{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px)}
+@media (max-width:820px){.uklad{grid-template-columns:1fr}}
+.lista{list-style:none;padding:0;margin:22px 0 0}
+.lista li{padding:11px 0 11px 22px;border-top:1px solid var(--linia);position:relative;font-size:15.5px;color:#2C3145}
+.lista li::before{content:"—";position:absolute;left:0;color:var(--zloto)}
+.znacznik{display:inline-block;margin-right:8px;font-family:var(--rubryka);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--minia);border:1px solid var(--minia);padding:3px 7px;vertical-align:middle}
+.zasada{border-left:3px solid var(--zloto);padding:16px 20px;background:var(--kamien);font-size:15px;color:#2C3145}
+
+/* misja */
+.misja{background:var(--lazur-glab);color:#E7E9F2}
+.misja .rubryka{color:#C8A75A}
+.misja h2{color:#fff}
+.misja h2 em{color:#D9BE7C}
+.misja p{color:#C3C9DD}
+
+/* formularz */
+.formularz{margin-top:36px;background:#fff;border:1px solid var(--linia);padding:clamp(22px,4vw,44px)}
+.pola{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px}
+@media (max-width:700px){.pola{grid-template-columns:1fr}}
+.pole--pelne{grid-column:1/-1}
+fieldset{border:0;padding:0;margin:0}
+label,legend{display:block;font-size:14.5px;font-weight:500;margin-bottom:7px}
+.opc{font-weight:400;color:var(--szept)}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--atrament);background:var(--papier);border:1px solid var(--linia);border-radius:0;padding:11px 13px}
+textarea{min-height:120px;resize:vertical}
+.wybor{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:4px 20px}
+.wybor label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15.5px;margin:0;padding:6px 0;cursor:pointer}
+.wybor input{margin-top:5px;accent-color:var(--lazur);flex-shrink:0}
+.podpowiedz{font-size:13.5px;color:var(--szept);margin-top:6px}
+.zgoda{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14.5px;color:#2C3145}
+.zgoda input{margin-top:4px;accent-color:var(--lazur);flex-shrink:0}
+.ukryte{position:absolute;left:-9999px}
+.formularz .btn{margin-top:26px;border:none}
+
+/* kontakt i stopka */
+.kontakt-linia{margin-top:18px;font-size:15.5px;color:#2C3145}
+.stopka{padding:36px 0;font-size:14px;color:var(--szept)}
+.stopka__pas{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.stopka a{color:var(--szept)}
+</style>
+</head>
+<body>
+
+<header class="gora">
+  <div class="rama gora__pas">
+    <a class="znak" href="/">Fundacja <i>Świętej Jadwigi</i></a>
+    <a class="wroc" href="/">← Strona główna</a>
+  </div>
+</header>
+
+<main id="tresc">
+  <section class="naglowek">
+    <div class="rama">
+      <p class="rubryka">Warszawa · Podkarpacie · kolejne miasta</p>
+      <h1>Opieka, którą <em>dobieramy starannie</em></h1>
+      <p class="naglowek__lead">Opiekunka przychodzi do domu Twojej mamy, taty albo bliskiej osoby w ciągu dnia, w ustalone dni i godziny. Pomaga w codziennych sprawach, dotrzymuje towarzystwa i pilnuje, żeby senior był bezpieczny. Wkrótce także <a href="#pielegniarka">opieka pielęgniarska</a>. Każdą rodzinę poznajemy osobiście, zanim zaproponujemy konkretną osobę.</p>
+      <div class="akcje">
+        <a class="btn" href="#zapisy">Dołącz do listy oczekujących</a>
+        <a class="btn btn--pusty" href="#jak">Jak to działa</a>
+      </div>
+      <p class="status">Przyjmujemy ograniczoną liczbę podopiecznych. Nowe miejsca przydzielamy według kolejności z listy.</p>
+    </div>
+  </section>
+
+  <section class="sekcja">
+    <div class="rama">
+      <p class="rubryka">Zakres opieki</p>
+      <h2>W czym pomagamy na co dzień</h2>
+      <p class="wstep">Zakres ustalamy z rodziną na spotkaniu i zapisujemy w umowie. Opieka odbywa się w ciągu dnia, nie świadczymy opieki całodobowej.</p>
+      <div class="zakres">
+        <div class="zakres__el"><span class="zakres__nr">I</span><h3>Codzienne sprawy</h3><p>Pomoc w przygotowaniu posiłków, drobne porządki, zakupy, apteka, przypomnienie o lekach, wyjście na spacer.</p></div>
+        <div class="zakres__el"><span class="zakres__nr">II</span><h3>Towarzystwo i rozmowa</h3><p>Wspólne czytanie, gry, rozmowa, wyjście do kościoła, na cmentarz, do kawiarni. Samotność męczy bardziej niż wiele chorób.</p></div>
+        <div class="zakres__el"><span class="zakres__nr">III</span><h3>Wizyty i urzędy</h3><p>Towarzyszenie w drodze do lekarza, przychodni, banku czy urzędu. Pilnujemy terminów i dokumentów.</p></div>
+        <div class="zakres__el"><span class="zakres__nr">IV</span><h3>Telefon, komputer, internet</h3><p>Nauka obsługi smartfona, wideorozmowy z rodziną, e-recepta i Internetowe Konto Pacjenta, bez pośpiechu i bez wstydu.</p></div>
+        <div class="zakres__el"><span class="zakres__nr">V</span><h3>Ochrona przed oszustwami</h3><p>Jak rozpoznać „wnuczka”, fałszywego policjanta czy podejrzany SMS. Opiekunka wie, co robić, gdy coś budzi niepokój.</p></div>
+        <div class="zakres__el"><span class="zakres__nr">VI</span><h3>Wsparcie i wyjazdy</h3><p>Na życzenie rodziny: rozmowy z psychologiem, zajęcia terapeutyczne oraz wyjazdy wypoczynkowe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja" id="pielegniarka" style="padding-top:0">
+    <div class="rama uklad">
+      <div>
+        <p class="rubryka"><span class="znacznik">Wkrótce</span> Opieka pielęgniarska</p>
+        <h2>Pielęgniarka <em>w domu seniora</em></h2>
+        <p class="wstep">Uruchamiamy domową opiekę pielęgniarską. Wykonują ją pielęgniarki z prawem wykonywania zawodu, a zabiegi wymagające zlecenia lekarza — na podstawie tego zlecenia. Można ją łączyć z opieką dzienną albo zamówić osobno.</p>
+        <div class="zasada" style="margin-top:24px">Zapisy na listę oczekujących już przyjmujemy. Wizyty pielęgniarskie rozpoczniemy po zakończeniu formalności rejestracyjnych; osoby z listy poinformujemy jako pierwsze.</div>
+      </div>
+      <div>
+        <ul class="lista">
+          <li>Opatrunki i pielęgnacja ran, w tym profilaktyka i leczenie odleżyn</li>
+          <li>Zastrzyki i inne zabiegi zlecone przez lekarza</li>
+          <li>Pomiary ciśnienia, tętna i poziomu cukru, prowadzenie dzienniczka</li>
+          <li>Przygotowanie i rozłożenie leków na cały tydzień</li>
+          <li>Pielęgnacja osoby leżącej i pomoc w higienie</li>
+          <li>Opieka po pobycie w szpitalu</li>
+          <li>Instruktaż dla rodziny: jak bezpiecznie pomagać na co dzień</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja sekcja--kamien" id="jak">
+    <div class="rama">
+      <p class="rubryka">Jak to działa</p>
+      <h2>Od zgłoszenia do pierwszej wizyty</h2>
+      <ol class="kroki">
+        <li class="krok"><span class="krok__nr">1</span><h3>Zgłoszenie</h3><p>Wypełniasz krótki formularz poniżej. To nic nie kosztuje i do niczego nie zobowiązuje.</p></li>
+        <li class="krok"><span class="krok__nr">2</span><h3>Rozmowa telefoniczna</h3><p>Koordynatorka oddzwania, dopytuje o potrzeby i mówi, kiedy realnie możemy zacząć.</p></li>
+        <li class="krok"><span class="krok__nr">3</span><h3>Wizyta w domu</h3><p>Spotykamy się z seniorem i rodziną u nich w domu. Poznajemy rytm dnia, przyzwyczajenia i to, co jest naprawdę ważne. Na tej podstawie przygotowujemy indywidualny plan opieki i wycenę.</p></li>
+        <li class="krok"><span class="krok__nr">4</span><h3>Dobór opiekunki</h3><p>Proponujemy osobę dopasowaną charakterem i doświadczeniem. Pierwsze spotkanie odbywa się w obecności koordynatorki.</p></li>
+        <li class="krok"><span class="krok__nr">5</span><h3>Umowa z fundacją</h3><p>Podpisujesz umowę z Fundacją Świętej Jadwigi, nie z osobą prywatną. Masz jasne zasady, fakturę lub rachunek i jednego koordynatora do wszystkich spraw.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sekcja">
+    <div class="rama uklad">
+      <div>
+        <p class="rubryka">Nasze zasady</p>
+        <h2>Na czym możesz polegać</h2>
+        <ul class="lista">
+          <li>Opiekunki sprawdzamy osobiście: rozmowa, referencje, zaświadczenie o niekaralności.</li>
+          <li>Opieka jest objęta ubezpieczeniem OC fundacji.</li>
+          <li>Zawsze ta sama osoba lub stała, mała zmiana. Senior nie musi co tydzień poznawać kogoś nowego.</li>
+          <li>Gdy opiekunka choruje, organizujemy zastępstwo.</li>
+          <li>Rodzina dostaje krótką informację po wizytach, w formie, która jej odpowiada.</li>
+          <li>Koordynatorka jest pod telefonem w dni robocze.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="rubryka">Sieć opieki</p>
+        <h2>Czy jesteśmy już w Twoim mieście?</h2>
+        <p class="wstep">Opiekujemy się seniorami w Warszawie i na Podkarpaciu, a sieć opiekunek rozbudowujemy o kolejne miasta. Wpisz swoją miejscowość w formularzu. Jeśli już tam jesteśmy, oddzwonimy z terminem. Jeśli jeszcze nie, zapiszemy Cię na listę: gdy zbierze się kilka rodzin z jednej okolicy, otwieramy tam nowy punkt.</p>
+        <div class="zasada" style="margin-top:28px">Nie publikujemy cennika, bo każda opieka wygląda inaczej. Cenę przedstawiamy po wizycie w domu, na piśmie, zanim cokolwiek podpiszesz.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sekcja misja">
+    <div class="rama">
+      <p class="rubryka">Dlaczego fundacja</p>
+      <h2>Twoja umowa <em>pomaga też innym</em></h2>
+      <p class="wstep">Fundacja Świętej Jadwigi prowadzi kluby seniora, mieszkania wspomagane i programy dla osób samotnych. Opieka dzienna jest częścią tej pracy: dzięki niej możemy wspierać także seniorów, których na opiekę nie stać.</p>
+    </div>
+  </section>
+
+  <section class="sekcja" id="zapisy">
+    <div class="rama">
+      <p class="rubryka">Lista oczekujących</p>
+      <h2>Dołącz do listy oczekujących</h2>
+      <p class="wstep">Odpowiemy w ciągu dwóch dni roboczych. Formularz może wypełnić sam senior albo ktoś z rodziny.</p>
+
+      <form class="formularz" name="lista-oczekujacych-opieka" method="POST" action="/dziekujemy" data-netlify="true" netlify-honeypot="pole-puste">
+        <input type="hidden" name="form-name" value="lista-oczekujacych-opieka">
+        <p class="ukryte"><label>Nie wypełniaj tego pola: <input name="pole-puste" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="pola">
+          <div>
+            <label for="imie">Imię i nazwisko</label>
+            <input id="imie" name="imie-nazwisko" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="kim">Kim jesteś dla seniora</label>
+            <select id="kim" name="relacja" required>
+              <option value="">Wybierz</option>
+              <option>Jestem seniorem / seniorką</option>
+              <option>Córka lub syn</option>
+              <option>Wnuczka lub wnuk</option>
+              <option>Inna osoba z rodziny</option>
+              <option>Znajomy, sąsiad, opiekun prawny</option>
+            </select>
+          </div>
+          <div>
+            <label for="tel">Telefon</label>
+            <input id="tel" name="telefon" type="tel" autocomplete="tel" required>
+          </div>
+          <div>
+            <label for="mail">Adres e-mail <span class="opc">(opcjonalnie)</span></label>
+            <input id="mail" name="email" type="email" autocomplete="email">
+          </div>
+          <div>
+            <label for="miejscowosc">Miejscowość seniora</label>
+            <input id="miejscowosc" name="miejscowosc" type="text" autocomplete="address-level2" placeholder="np. Warszawa-Mokotów, Krosno, Brzozów" required>
+          </div>
+          <div>
+            <label for="godziny">Ile godzin opieki tygodniowo</label>
+            <select id="godziny" name="godziny-tygodniowo" required>
+              <option value="">Wybierz</option>
+              <option>Do 6 godzin</option>
+              <option>7–15 godzin</option>
+              <option>16–30 godzin</option>
+              <option>Ponad 30 godzin</option>
+              <option>Jeszcze nie wiem</option>
+            </select>
+          </div>
+
+          <fieldset class="pole--pelne">
+            <legend>W czym potrzebna jest pomoc <span class="opc">(można zaznaczyć kilka)</span></legend>
+            <div class="wybor">
+              <label><input type="checkbox" name="zakres[]" value="Codzienne sprawy, posiłki, zakupy"> Codzienne sprawy, posiłki, zakupy</label>
+              <label><input type="checkbox" name="zakres[]" value="Towarzystwo i rozmowa"> Towarzystwo i rozmowa</label>
+              <label><input type="checkbox" name="zakres[]" value="Wizyty u lekarza, urzędy"> Wizyty u lekarza, urzędy</label>
+              <label><input type="checkbox" name="zakres[]" value="Telefon, komputer, internet"> Telefon, komputer, internet</label>
+              <label><input type="checkbox" name="zakres[]" value="Ochrona przed oszustwami"> Ochrona przed oszustwami</label>
+              <label><input type="checkbox" name="zakres[]" value="Wsparcie psychologiczne, zajęcia"> Wsparcie psychologiczne, zajęcia</label>
+              <label><input type="checkbox" name="zakres[]" value="Wyjazdy wypoczynkowe"> Wyjazdy wypoczynkowe</label>
+              <label><input type="checkbox" name="zakres[]" value="Opieka pielęgniarska"> Opieka pielęgniarska</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="start">Od kiedy potrzebna jest opieka</label>
+            <select id="start" name="planowany-start" required>
+              <option value="">Wybierz</option>
+              <option>Jak najszybciej</option>
+              <option>W ciągu miesiąca</option>
+              <option>W ciągu 2–3 miesięcy</option>
+              <option>Na razie się rozglądam</option>
+            </select>
+          </div>
+          <div>
+            <label for="kiedy">Kiedy najlepiej zadzwonić <span class="opc">(opcjonalnie)</span></label>
+            <select id="kiedy" name="pora-kontaktu">
+              <option value="">Bez znaczenia</option>
+              <option>Rano (9–12)</option>
+              <option>Po południu (12–16)</option>
+              <option>Wieczorem (16–19)</option>
+            </select>
+          </div>
+
+          <div class="pole--pelne">
+            <label for="info">Coś, o czym powinniśmy wiedzieć <span class="opc">(opcjonalnie)</span></label>
+            <textarea id="info" name="dodatkowe-informacje"></textarea>
+            <p class="podpowiedz">Prosimy nie wpisywać tu szczegółów dotyczących zdrowia. Porozmawiamy o nich spokojnie przy spotkaniu.</p>
+          </div>
+
+          <div class="pole--pelne">
+            <label class="zgoda"><input type="checkbox" name="zgoda" value="tak" required> <span>Wyrażam zgodę na kontakt w sprawie opieki i przetwarzanie podanych danych przez Fundację Świętej Jadwigi w tym celu. Szczegóły w <a href="/polityka-prywatnosci">polityce prywatności</a>.</span></label>
+          </div>
+        </div>
+
+        <button class="btn" type="submit">Dołącz do listy oczekujących</button>
+      </form>
+
+      <p class="kontakt-linia">Wolisz porozmawiać od razu? Zadzwoń: <a href="tel:+48577527677">577 527 677</a> lub <a href="tel:+48515900812">515 900 812</a>, albo napisz: <a href="mailto:rexhedvigis@gmail.com">rexhedvigis@gmail.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="stopka">
+  <div class="rama stopka__pas">
+    <span>© 2026 Fundacja Świętej Jadwigi · KRS 0001251150 · NIP 7011323791 · REGON 545301403</span>
+    <span><a href="/polityka-prywatnosci">Polityka prywatności</a> · <a href="/">hedvigisrex.pl</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
