@@ -62,11 +62,28 @@ p{margin:0 0 1em}
 .znak{font-family:var(--display);font-size:1.12rem;letter-spacing:.02em;text-decoration:none}
 .znak b{font-weight:400}
 .znak i{font-style:italic;color:var(--zloto)}
-.nawi{display:flex;gap:26px;font-size:14px;flex-wrap:wrap}
+.nawi{display:flex;gap:6px 26px;font-size:14px;flex-wrap:wrap;margin-top:10px}
 .nawi a{text-decoration:none;color:var(--szept);padding-bottom:2px;border-bottom:1px solid transparent}
 .nawi a:hover{color:var(--atrament);border-bottom-color:var(--minia)}
 
 .nawi a.nawi__wyr{color:var(--minia);font-weight:600}
+
+/* ——— social media ——— */
+.social{display:flex;gap:10px;align-items:center}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--linia);color:var(--lazur);text-decoration:none;transition:color .2s,border-color .2s}
+.social a:hover{color:var(--zloto);border-color:var(--zloto)}
+.gora__pas .nawi{flex-basis:100%}
+.gora__pas .social{align-self:center}
+
+/* ——— okienko Facebooka (ładowane dopiero po kliknięciu) ——— */
+.aktualnosci__uklad{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:clamp(28px,4vw,56px);align-items:start}
+@media (max-width:980px){.aktualnosci__uklad{grid-template-columns:1fr}}
+.fb{margin-top:clamp(24px,3vw,34px);background:var(--kamien-jasny);border:1px solid var(--linia);padding:26px 24px}
+.fb h3{margin:12px 0 10px}
+.fb p{font-size:14.5px;color:#2C3145}
+.fb__drobne{font-size:12.5px!important;color:var(--szept)!important;margin-top:12px}
+.fb__ramka{width:100%;min-height:520px;border:0;display:block;background:#fff}
+.fb .btn{border:none;cursor:pointer;margin-top:6px}
 
 /* ——— zajawka FALOCHRON ——— */
 .alert{background:var(--lazur-glab,#1A2750);color:#E7E9F2;margin-top:22px}
@@ -249,9 +266,12 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
 
 <header class="gora">
   <div class="rama gora__pas">
-    <a class="znak" href="#"><b>Fundacja</b> <i>Świętej Jadwigi</i></a>
+    <a class="znak" href="/"><b>Fundacja</b> <i>Świętej Jadwigi</i></a>
+    <div class="social"><a href="https://www.facebook.com/profile.php?id=61586326442903" target="_blank" rel="noopener" aria-label="Fundacja na Facebooku"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></div>
     <nav class="nawi" aria-label="Główna">
       <a href="/falochron.html" class="nawi__wyr">FALOCHRON dla szkół</a>
+      <a href="/opieka.html" class="nawi__wyr">Opieka dla seniorów</a>
+      <a href="/poradniki.html">Bezpłatne poradniki</a>
       <a href="/materialy.html">Materiały dla wychowawców</a>
       <a href="#aktualnosci">Aktualności</a>
       <a href="#rejestr">Gdzie działamy</a>
@@ -288,9 +308,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
         <span></span>
       </div>
       <h1>Miejsca, w których <em>nikt nie zostaje sam</em>.</h1>
-      <p class="hero__lead">Prowadzimy kluby seniora, mieszkania wspomagane dla wychowanków pieczy zastępczej oraz programy kulturalne i wydawnicze. Działamy tam, gdzie usługi społeczne są potrzebne, a nie ma ich kto poprowadzić.</p>
+      <p class="hero__lead">Prowadzimy opiekę dzienną dla seniorów, kluby seniora, mieszkania wspomagane dla wychowanków pieczy zastępczej oraz programy kulturalne i wydawnicze. Działamy tam, gdzie usługi społeczne są potrzebne, a nie ma ich kto poprowadzić.</p>
       <div class="akcje">
         <a class="btn" href="#programy">Zobacz programy</a>
+        <a class="btn btn--pusty" href="/opieka.html">Opieka dla seniora</a>
         <a class="btn btn--pusty" href="#wspolpraca">Współpraca z gminą</a>
       </div>
     </div>
@@ -301,6 +322,24 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
       <div class="aktualnosci__glowa">
         <h2>Aktualności</h2>
       </div>
+
+      <div class="aktualnosci__uklad">
+      <div>
+      <article class="wpis odslon">
+        <time datetime="2026-10-31">Październik 2026</time>
+        <div>
+          <h3><a href="/opieka.html">Opieka dzienna dla seniorów: Warszawa, Podkarpacie i kolejne miasta</a></h3>
+          <p>Rozbudowujemy sieć opiekunek. Opiekunka przychodzi do domu seniora w ustalone dni i godziny: pomaga w codziennych sprawach, towarzyszy w drodze do lekarza i urzędu, uczy obsługi telefonu i chroni przed oszustami. Umowę podpisuje się z fundacją. <a href="/opieka.html">Sprawdź, czy jesteśmy już w Twoim mieście</a>. Dla seniorów i ich rodzin przygotowaliśmy też <a href="/poradniki.html">bezpłatne poradniki do druku</a>.</p>
+        </div>
+      </article>
+
+      <article class="wpis odslon">
+        <time datetime="2026-10-12">Październik 2026</time>
+        <div>
+          <h3>Już 14 seniorów pod opieką Fundacji na Podkarpaciu</h3>
+          <p>Do naszego programu dołączyli kolejni podopieczni. Opiekujemy się już 14 seniorami w powiatach brzozowskim, krośnieńskim i sanockim. Jeśli Twój bliski lub sąsiad potrzebuje wsparcia, <a href="#kontakt">napisz do nas</a> albo zadzwoń: <a href="tel:+48577527677">577 527 677</a>. Wspólnie sprawdzimy, jak możemy pomóc.</p>
+        </div>
+      </article>
 
       <article class="wpis odslon">
         <time datetime="2026-10-12">Październik 2026</time>
@@ -317,6 +356,18 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
           <p>Prowadzimy opiekę i wsparcie seniorów w województwie podkarpackim. Programem naszej opieki objętych jest 10 seniorów.</p>
         </div>
       </article>
+      </div>
+
+      <aside class="fb" aria-labelledby="fb-tytul">
+        <p class="rubryka">Facebook</p>
+        <h3 id="fb-tytul">Co u nas słychać</h3>
+        <div id="fb-miejsce">
+          <p>Nowe poradniki, zapisy na bezpłatne spotkania i wydarzenia dla seniorów publikujemy na Facebooku.</p>
+          <button type="button" class="btn" id="fb-pokaz">Pokaż posty</button>
+          <p class="fb__drobne">Po kliknięciu wyświetlimy posty z Facebooka. Facebook może wtedy zapisać pliki cookie, szczegóły w <a href="/polityka-prywatnosci.html">polityce prywatności</a>. Możesz też <a href="https://www.facebook.com/profile.php?id=61586326442903" target="_blank" rel="noopener">otworzyć naszą stronę na Facebooku</a>.</p>
+        </div>
+      </aside>
+      </div>
     </div>
   </section>
 
@@ -324,7 +375,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
     <div class="rama">
       <div class="rejestr__glowa">
         <h2>Rejestr miejsc</h2>
-        <p class="rubryka rubryka--cicha" style="margin:0">Stan na wrzesień 2026</p>
+        <p class="rubryka rubryka--cicha" style="margin:0">Stan na październik 2026</p>
       </div>
 
       <div class="wiersz odslon" tabindex="0">
@@ -357,6 +408,20 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
 
       <div class="wiersz odslon" tabindex="0">
         <div class="wiersz__znak">◆</div>
+        <div class="wiersz__miejsce">Warszawa<small>woj. mazowieckie</small></div>
+        <div class="wiersz__program"><a href="/opieka.html">Opieka dzienna dla seniorów</a><em>Opiekunka w domu seniora — przyjmujemy zapisy na listę oczekujących.</em></div>
+        <div class="stan stan--tok">Zapisy</div>
+      </div>
+
+      <div class="wiersz odslon" tabindex="0">
+        <div class="wiersz__znak">◆</div>
+        <div class="wiersz__miejsce">Podkarpacie<small>powiaty brzozowski, krośnieński i sanocki</small></div>
+        <div class="wiersz__program">Opieka nad seniorami<em>14 seniorów pod opieką — przyjmujemy kolejne zgłoszenia.</em></div>
+        <div class="stan stan--gotowe">W realizacji</div>
+      </div>
+
+      <div class="wiersz odslon" tabindex="0">
+        <div class="wiersz__znak">◆</div>
         <div class="wiersz__miejsce">Uhnin<small>gm. Dębowa Kłoda, woj. lubelskie</small></div>
         <div class="wiersz__program">Klub seniora<em>Adaptacja budynku dawnej szkoły na centrum aktywności.</em></div>
         <div class="stan stan--tok">W procedowaniu</div>
@@ -381,9 +446,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
   <section class="programy" id="programy">
     <div class="rama">
       <div class="programy__intro">
-        <p class="rubryka">Osiem programów</p>
+        <p class="rubryka">Dziewięć programów</p>
         <h2 style="margin:16px 0 18px">Opieka, samodzielność, pamięć</h2>
-        <p>Sześć programów społecznych prowadzimy w konkretnych miejscach i dla konkretnych osób. Dwa pozostałe — kulturalny i wydawniczy — utrzymują dziedzictwo, od którego fundacja wzięła nazwę.</p>
+        <p>Siedem programów społecznych prowadzimy w konkretnych miejscach i dla konkretnych osób. Dwa pozostałe — kulturalny i wydawniczy — utrzymują dziedzictwo, od którego fundacja wzięła nazwę.</p>
       </div>
 
       <div class="siatka">
@@ -398,6 +463,19 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
             <li>Akcja „Możesz. Ale czy musisz?” od 13 listopada</li>
           </ul>
           <p style="margin-top:20px"><a href="/falochron.html">Poznaj program →</a> &nbsp;·&nbsp; <a href="/materialy.html">Bezpłatne materiały →</a></p>
+        </article>
+
+        <article class="karta odslon">
+          <p class="rubryka">Program · Opieka · nowość</p>
+          <h3>Opieka dzienna dla seniorów</h3>
+          <p>Opiekunka, która przychodzi do domu seniora w ustalone dni i godziny. Każdą rodzinę poznajemy osobiście, zanim zaproponujemy konkretną osobę. Działamy w Warszawie i na Podkarpaciu, sieć rozbudowujemy o kolejne miasta.</p>
+          <ul>
+            <li>Codzienne sprawy, zakupy, wizyty u lekarza</li>
+            <li>Towarzystwo, wyjścia, pomoc z telefonem i internetem</li>
+            <li>Ochrona przed oszustwami „na wnuczka”</li>
+            <li>Opieka pielęgniarska w domu seniora</li>
+          </ul>
+          <p style="margin-top:20px"><a href="/opieka.html">Czy jesteśmy w Twoim mieście? →</a> &nbsp;·&nbsp; <a href="/poradniki.html">Bezpłatne poradniki →</a></p>
         </article>
 
         <article class="karta odslon">
@@ -422,7 +500,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
             <li>Proste narzędzia i nawyki wspierające dobrostan na co dzień</li>
             <li>Spotkania międzypokoleniowe łączące seniorów i młodzież</li>
           </ul>
-          <p style="margin-top:20px"><strong>Liderka programu: Marta Deneka</strong><br>Pedagog, wolontariuszka, organizatorka warsztatów i animatorka wellbeingu w szkołach.</p>
+          <p style="margin-top:20px"><strong>Liderka programu: Marta Deneka</strong><br>Pedagog, na co dzień pracuje w szkole jako nauczycielka języka angielskiego. Prowadzi zajęcia z dobrostanu (wellbeingu) dla dzieci i młodzieży na Lubelszczyźnie, jest też wolontariuszką i organizatorką warsztatów.</p>
         </article>
 
         <article class="karta odslon">
@@ -588,6 +666,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
           <div class="pole">
             <label for="temat">Czego dotyczy sprawa</label>
             <select id="temat" name="temat">
+              <option>Zgłoszenie seniora do opieki</option>
               <option>FALOCHRON — program dla szkoły</option>
               <option>FALOCHRON — program dla gminy</option>
               <option>Współpraca z gminą lub OPS-em</option>
@@ -607,6 +686,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
             <label for="wiadomosc">Wiadomość</label>
             <textarea id="wiadomosc" name="wiadomosc" rows="5" required></textarea>
           </div>
+          <p style="font-size:13px;color:var(--szept);margin:0">Odpowiemy na podany adres. Zasady przetwarzania danych: <a href="/polityka-prywatnosci.html">polityka prywatności</a>.</p>
           <button type="submit" class="btn">Wyślij wiadomość</button>
         </form>
 
@@ -615,8 +695,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
           <dd><a href="mailto:rexhedvigis@gmail.com">rexhedvigis@gmail.com</a></dd>
           <dt>Telefon</dt>
           <dd><a href="tel:+48577527677">577 527 677</a><br><a href="tel:+48515900812">515 900 812</a></dd>
-          <dt>Siedziba</dt>
-          <dd>ul. Koszykowa 1/9<br>00-564 Warszawa</dd>
           <dt>Dane rejestrowe</dt>
           <dd>KRS 0001251150<br>NIP 7011323791<br>REGON 545301403</dd>
         </dl>
@@ -626,14 +704,54 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--minia);outline-offset
 
 </main>
 
+<section class="dok" aria-labelledby="dok-tytul">
+<style>
+.dok{background:#F2F3EF;border-top:1px solid rgba(20,23,42,.16);padding:clamp(36px,5vw,56px) 0}
+.dok__glowa{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:2px solid #14172A;padding-bottom:10px;margin-bottom:4px}
+.dok__glowa h2{font-family:"Cardo",Georgia,serif;font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);margin:0}
+.dok__glowa p{margin:0;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5B6070}
+.dok__siatka{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+@media (max-width:900px){.dok__siatka{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.dok__siatka{grid-template-columns:1fr}}
+.dok__el{display:block;text-decoration:none;color:#14172A;padding:18px 0;border-bottom:1px solid rgba(20,23,42,.16)}
+.dok__el b{display:block;font-family:"Cardo",Georgia,serif;font-weight:400;font-size:1.2rem;line-height:1.2;margin-bottom:4px}
+.dok__el span{display:block;font-size:14px;color:#5B6070;line-height:1.45}
+.dok__el:hover b{color:#A8322A}
+.dok__el:focus-visible{outline:2px solid #A8322A;outline-offset:3px}
+</style>
+<div class="rama">
+  <div class="dok__glowa"><h2 id="dok-tytul">Dokumenty fundacji</h2><p>Statut · strategia · bezpieczeństwo</p></div>
+  <div class="dok__siatka">
+    <a class="dok__el" href="/statut-fundacji.pdf"><b>Statut fundacji</b><span>Tekst jednolity z 25 sierpnia 2026 r. Cele, organy i zasady działania Fundacji (PDF).</span></a>
+    <a class="dok__el" href="/strategia-fundacji-2026-2030.pdf"><b>Strategia na lata 2026–2030</b><span>Misja, wartości i cele w sześciu obszarach działania Fundacji (PDF).</span></a>
+    <a class="dok__el" href="/standardy-ochrony-maloletnich.html"><b>Standardy ochrony małoletnich</b><span>Jak dbamy o bezpieczeństwo dzieci na naszych zajęciach. Wersja pełna i dokumenty do pobrania.</span></a>
+    <a class="dok__el" href="/standardy-ochrony-maloletnich.html#dla-dzieci"><b>Wersja dla dzieci i młodzieży</b><span>„Masz prawo czuć się bezpiecznie” — zasady prostym językiem i telefony zaufania.</span></a>
+    <a class="dok__el" href="/standardy-ochrony-maloletnich.html#zglos"><b>Zgłoś niepokój</b><span>Formularz dla dzieci, rodziców i nauczycieli. Trafia do koordynatorki ds. ochrony małoletnich.</span></a>
+    <a class="dok__el" href="/polityka-prywatnosci.html"><b>Polityka prywatności</b><span>Jakie dane zbieramy przez stronę i formularze, w jakim celu i jakie masz prawa.</span></a>
+  </div>
+</div>
+</section>
+
 <footer>
   <div class="rama stopka">
-    <span>© 2026 Fundacja Świętej Jadwigi · ul. Koszykowa 1/9, 00-564 Warszawa</span>
+    <span>© 2026 Fundacja Świętej Jadwigi · hedvigisrex.pl · <a href="/polityka-prywatnosci.html">Polityka prywatności</a> · <a href="/standardy-ochrony-maloletnich.html">Standardy ochrony małoletnich</a></span>
     <span>KRS 0001251150 · NIP 7011323791 · REGON 545301403</span>
+    <span class="social"><a href="https://www.facebook.com/profile.php?id=61586326442903" target="_blank" rel="noopener" aria-label="Fundacja na Facebooku"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></span>
   </div>
 </footer>
 
 <script>
+(function(){
+  var b = document.getElementById('fb-pokaz');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var m = document.getElementById('fb-miejsce');
+    var w = Math.min(500, Math.max(180, m.clientWidth));
+    var src = 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent('https://www.facebook.com/profile.php?id=61586326442903') +
+      '&tabs=timeline&width=' + w + '&height=520&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&locale=pl_PL';
+    m.innerHTML = '<iframe class="fb__ramka" title="Posty Fundacji Świętej Jadwigi na Facebooku" src="' + src + '" height="520" scrolling="no" allowfullscreen loading="lazy"></iframe>';
+  });
+})();
 (function(){
   var el = document.querySelectorAll('.odslon');
   if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
